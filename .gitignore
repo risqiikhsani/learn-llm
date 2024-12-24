@@ -1,6 +1,5 @@
 .env
 db/
 .env.local
-.env.*
 *.env
 .venv
