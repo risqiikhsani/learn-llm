@@ -86,8 +86,6 @@ system_prompt_fmt = system_prompt.format(context=docs_text)
 
 messages = [SystemMessage(content=system_prompt_fmt), HumanMessage(content=question)]
 
-
-
 chain = llm | StrOutputParser()
 
 response = chain.invoke(messages)
