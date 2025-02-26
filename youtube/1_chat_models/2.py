@@ -1,22 +1,23 @@
 from dotenv import load_dotenv
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 from langchain_huggingface import ChatHuggingFace,HuggingFaceEndpoint
+from langchain_openai import ChatOpenAI
 
 # Load environment variables from .env
 load_dotenv()
 
-llm = HuggingFaceEndpoint(
-    repo_id="HuggingFaceH4/zephyr-7b-beta",
-    task="text-generation",
-    max_new_tokens=512,
-    do_sample=False,
-    repetition_penalty=1.03,
-)
+# llm = HuggingFaceEndpoint(
+#     repo_id="HuggingFaceH4/zephyr-7b-beta",
+#     task="text-generation",
+#     max_new_tokens=512,
+#     do_sample=False,
+#     repetition_penalty=1.03,
+# )
 
-chat_model = ChatHuggingFace(llm=llm)
+# chat_model = ChatHuggingFace(llm=llm)
 
 # Create a ChatOpenAI model
-# model = ChatOpenAI(model="gpt-4o")
+chat_model = ChatOpenAI(model="gpt-4o-mini")
 
 # SystemMessage:
 #   Message for priming AI behavior, usually passed in as the first of a sequenc of input messages.

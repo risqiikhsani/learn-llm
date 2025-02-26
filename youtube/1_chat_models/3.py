@@ -1,5 +1,4 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_anthropic import ChatAnthropic
+
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage, SystemMessage
@@ -16,7 +15,7 @@ messages = [
 # ---- LangChain OpenAI Chat Model Example ----
 
 # Create a ChatOpenAI model
-model = ChatOpenAI(model="gpt-4o")
+model = ChatOpenAI(model="gpt-4o-mini")
 
 # Invoke the model with messages
 result = model.invoke(messages)
@@ -27,7 +26,7 @@ print(f"Answer from OpenAI: {result.content}")
 
 # Create a Anthropic model
 # Anthropic models: https://docs.anthropic.com/en/docs/models-overview
-model = ChatAnthropic(model="claude-3-opus-20240229")
+model = ChatAnthropic(model="claude-3-opus-20240229")\
 
 result = model.invoke(messages)
 print(f"Answer from Anthropic: {result.content}")
